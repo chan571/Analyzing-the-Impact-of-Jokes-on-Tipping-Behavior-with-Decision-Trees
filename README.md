@@ -1,3 +1,4 @@
+## Introduction
 This analysis is sourced from the study “The Effects of a Joke on Tipping When it is Delivered at the Same Time as the Bill,” by Nicholas Gueguen (2002). 
 
 Does telling a joke affect whether a waiter in a coffee bar gets a tip? 
@@ -5,6 +6,7 @@ This was studied at a famous resort's coffee bar on the west coast of France.
 The waiter split customers into three groups randomly: 1. A joke card with the bill. 2. A restaurant ad with the bill 3. Nothing with the bill. 
 Then, the waiter noted if each customer left a tip or not.
 
+## Load libraries and read data
 ```
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -20,6 +22,7 @@ df
 ```
 <img width="242" alt="Screenshot 2024-02-14 at 9 42 07 PM" src="https://github.com/chan571/Impact-of-Jokes-on-Tipping-Behavior/assets/157858508/f30f08b5-0558-4d72-88ed-9ce714d3886d">
 
+## Build a Decision Tree Classification Model
 The experiment groups serve as the explanatory variables, and the outcome variable is whether customers left a tip.
 Split the dataset into 70% of training data, and 30% remaining for testing.
 
@@ -44,6 +47,7 @@ print(confusion_matrix(y_test, predictions))
 ```
 <img width="94" alt="Screenshot 2024-02-14 at 9 46 31 PM" src="https://github.com/chan571/Impact-of-Jokes-on-Tipping-Behavior/assets/157858508/403f135d-608f-4512-bb04-5ccae14d3ed1">
 
+## Visualization
 Visualization of a decision tree classifier using the Graphviz library
 ```
 import graphviz
@@ -66,7 +70,7 @@ print(text_representation)
 ```
 <img width="231" alt="Screenshot 2024-02-14 at 9 48 53 PM" src="https://github.com/chan571/Impact-of-Jokes-on-Tipping-Behavior/assets/157858508/485c0b1c-ca09-42c0-89cd-c003329cd840">
 
-Model Interpretation:
+## Conclusion
 Indicator ‘Joke’ is put as the root node, which has maximum information gain. It represents the best predictor for whether customers tip. 
 The majority class within the root node is 0, indicating no tipping, and constitutes 68% of sample. 
 In the group that received a card featuring a joke with the bill, the likelihood of leaving a tip increases to almost 50%. 
